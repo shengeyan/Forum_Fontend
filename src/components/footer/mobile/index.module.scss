@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.footerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+}

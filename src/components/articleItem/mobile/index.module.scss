@@ -1,0 +1,85 @@
+.articleItem {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.articleContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.authorInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.authorName {
+    font-size: 14px;
+    color: #555;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.content p {
+    flex: 1;
+    margin-right: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likes,
+.comments {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.likes svg,
+.comments svg {
+    margin-right: 4px;
+}
+
+.tag {
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}

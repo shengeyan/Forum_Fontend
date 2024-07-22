@@ -1,0 +1,17 @@
+.function :global {
+    .arco-menu-overflow-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .arco-menu-item {
+        margin: 0 5px !important;
+    }
+    .arco-menu-selected-label {
+        bottom: -2px !important;
+    }
+
+    .arco-menu-inner {
+        padding: 10px 10px !important;
+    }
+}
