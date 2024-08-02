@@ -1,0 +1,59 @@
+.container {
+    width: 800px;
+    height: 600px;
+    position: relative; /* 确保子元素相对定位 */
+}
+
+.BCbox {
+    height: 100%;
+    width: 100%;
+    background-size: cover; /* 背景图片填充整个容器 */
+    background-position: center; /* 背景图片居中对齐 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Slide {
+    height: 100%;
+    width: 20%; /* 假设平行四边形宽度是背景宽度的20% */
+    background-size: cover; /* 背景图片填充整个容器 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+
+    position: absolute; /* 绝对定位 */
+    bottom: 0; /* 确保左下角顶点重叠 */
+    left: 0;
+    transform: skew(-10deg);
+    transform-origin: top right; /* 设置变形原点 */
+    animation: slide 5s infinite; /* 添加动画 */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+@keyframes slide {
+    0% {
+        left: 0;
+        background-position: 0% 0%; /* 初始位置 */
+    }
+    100% {
+        left: 80%; /* 确保右上角对齐 */
+        background-position: 80% 0%; /* 背景移动位置 */
+    }
+}
+
+.fontTop,
+.fontBottom {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.middleBackground {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

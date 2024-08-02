@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import ArticleItem, {
-    ArticleItemProps,
-} from '@/components/articleItem/mobile/Index'
+import ArticleItem from '@/common/articleItem/mobile/Index'
 import styles from './index.module.scss'
+import { ArticleItemProps } from '@/types/commonType/articleType'
 
 const articlesPerPage = 10
 

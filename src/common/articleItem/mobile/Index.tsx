@@ -1,17 +1,7 @@
 import React from 'react'
 import { IconThumbUp, IconMessage } from '@arco-design/web-react/icon'
 import styles from './index.module.scss'
-
-export interface ArticleItemProps {
-    id: number
-    title: string
-    authorName: string
-    authorAvatar: string
-    content: string
-    imageUrl: string
-    likeCount: number
-    tag: string
-}
+import { ArticleItemProps } from '@/types/commonType/articleType'
 
 const ArticleItem: React.FC<ArticleItemProps> = ({
     title,

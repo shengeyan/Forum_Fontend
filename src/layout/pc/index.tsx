@@ -1,50 +1,35 @@
 import { Layout } from '@arco-design/web-react'
 import Nav from '@/components/nav/pc/Index'
 import MyFooter from '@/components/footer/pc/Index'
-const Sider = Layout.Sider
+
+import styles from './index.module.scss'
+import { Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
+
 const Header = Layout.Header
 const Footer = Layout.Footer
-const Content = Layout.Content
 
 const PClayout = () => {
     return (
         <>
-            <div className="layout">
-                <Layout>
-                    <Header className="header">
+            <div className={styles.layout}>
+                <Layout className={styles['full-height-layout']}>
+                    <Header className={styles.header}>
                         <Nav></Nav>
                     </Header>
-                    <Layout>
-                        <Sider className="sider">Sider</Sider>
-                        <Content className="content">Content</Content>
+                    <Layout className={styles['middle-layout']}>
+                        <Suspense>
+                            <Outlet></Outlet>
+                        </Suspense>
                     </Layout>
-                    <Footer className="footer" style={{ textAlign: 'center' }}>
+                    <Footer
+                        className={styles.footer}
+                        style={{ textAlign: 'center' }}
+                    >
                         <MyFooter></MyFooter>
                     </Footer>
                 </Layout>
             </div>
-            <style jsx>{`
-                .layout {
-                    width: 100vw;
-                    height: 100vh;
-                    .arco-layout {
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .header {
-                    }
-                    .sider {
-                        background-color: aqua;
-                    }
-                    .content {
-                        background-color: bisque;
-                    }
-                    .footer {
-                        width: 100%;
-                        height: 10vh;
-                    }
-                }
-            `}</style>
         </>
     )
 }

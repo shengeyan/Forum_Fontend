@@ -1,5 +1,20 @@
 import instance from '../axios'
+import { IndependentArticleResponse } from '@/types/commonType/articleType'
 
+// 获取对应页数的文章 10个文章为一页
 export const getArticle = async (data: number) => {
-    return instance.get('/getArticle', { params: { page: data } })
+    return instance.get('/getArticle', { params: { batch: data } })
+}
+
+// 获取特殊文章
+export const getSpecialArticle = async (
+    name: string
+): Promise<IndependentArticleResponse> => {
+    const response = await instance.get<IndependentArticleResponse>(
+        '/getSpecialArticle',
+        {
+            params: { ArticleName: name },
+        }
+    )
+    return response.data
 }

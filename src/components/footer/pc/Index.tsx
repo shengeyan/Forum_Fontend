@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 export default function Index() {
     return (
         <>
-            <Divider style={{ margin: '10px 0' }} />
+            <Divider style={{ margin: '5px 0' }} />
             <div style={{ marginBottom: '10px' }}>
                 © 2024 Crazy For Code. All rights reserved.
             </div>
-            <div style={{ marginBottom: ' 10px' }}>
+            {/* <div style={{ marginBottom: ' 10px' }}>
                 <Link to="/terms" style={{ margin: '0 10px' }}>
                     Terms of Service
                 </Link>
@@ -19,7 +19,7 @@ export default function Index() {
                 <Link to="/contact" style={{ margin: '0 10px' }}>
                     Contact Us
                 </Link>
-            </div>
+            </div> */}
         </>
     )
 }

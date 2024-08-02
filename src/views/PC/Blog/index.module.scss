@@ -1,0 +1,15 @@
+.container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+.sider {
+    flex: 0 0 auto;
+}
+.content {
+    flex: 1;
+    overflow: auto;
+}
+.content::-webkit-scrollbar {
+    display: none;
+}

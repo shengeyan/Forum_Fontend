@@ -1,0 +1,96 @@
+.articleItem {
+    display: flex;
+    height: 6rem;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #fff;
+
+    .image {
+        flex: 0 0 150px;
+        height: 100%;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+        margin-right: 16px;
+    }
+
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+
+            .authorAvatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+
+            .authorName {
+                font-weight: bold;
+                margin-right: 8px;
+            }
+
+            .date {
+                color: #999;
+            }
+        }
+
+        .authorName {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .title {
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            line-height: 24px;
+            color: #252933;
+        }
+
+        .contentText {
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /* 显示三行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            color: #8a919f;
+            font-size: 13px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                flex-grow: 1;
+            }
+
+            .tag {
+                margin-right: 0.5rem;
+                background-color: #f0f0f0;
+                padding: 4px;
+                border-radius: 0.3rem;
+            }
+
+            .likeCount {
+                margin-left: auto;
+            }
+        }
+    }
+}

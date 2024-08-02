@@ -1,11 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from 'react-router-dom'
 import { isMobile } from '@/utils/isMobile'
 import MobileLayout from '@/layout/mobile/index'
 import PCLayout from '@/layout/pc/index'
 import React from 'react'
+import Test from '@/views/PC/test'
 
 const isMobileDevice = isMobile()
-// eslint-disable-next-line react-refresh/only-export-components
 const MobileLazyHome = React.lazy(
     () => import('@/components/content/mobile/Index')
 )
@@ -25,10 +26,36 @@ const mobileRoutes = [
 ]
 
 // PC端路由
+const PCBlogs = React.lazy(() => import('@/views/PC/Blog/BLOG'))
+const AboutUs = React.lazy(() => import('@/views/PC/AboutUS/AboutUS'))
+const Links = React.lazy(() => import('@/views/PC/Link/Link'))
+
 const desktopRoutes = [
     {
         path: '/',
         element: <PCLayout></PCLayout>,
+        children: [
+            // blogs
+            {
+                path: '/blogs',
+                element: <PCBlogs />,
+            },
+            // about us
+            {
+                path: '/about',
+                element: <AboutUs />,
+            },
+            // links
+            {
+                path: '/links',
+                element: <Links />,
+            },
+        ],
+    },
+    // tst
+    {
+        path: '/tst',
+        element: <Test></Test>,
     },
 ]
 

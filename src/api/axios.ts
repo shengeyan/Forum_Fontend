@@ -20,7 +20,6 @@ instance.interceptors.request.use(
         return config
     },
     (error) => {
-        // 对请求错误做些什么
         return Promise.reject(error)
     }
 )
@@ -29,7 +28,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
     (response) => {
         // 对响应数据做一些处理，比如解析响应结果
-        return response
+        return response.data
     },
     (error) => {
         // 对响应错误做些什么
