@@ -14,7 +14,7 @@ const LiknItem: React.FC<linkType> = (props) => {
         AvatarURL = DefaultInfo.defaultAvatarURL,
         PersonalSignature = DefaultInfo.PersonalSignature,
     } = props
-    
+
     return (
         <div className={styles.container}>
             {/* Info */}
