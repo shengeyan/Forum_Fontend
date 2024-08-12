@@ -29,6 +29,9 @@ const mobileRoutes = [
 const PCBlogs = React.lazy(() => import('@/views/PC/Blog/BLOG'))
 const AboutUs = React.lazy(() => import('@/views/PC/AboutUS/AboutUS'))
 const Links = React.lazy(() => import('@/views/PC/Link/Link'))
+const ArticleDetail = React.lazy(
+    () => import('@/common/articleDetail/ArticleDetail')
+)
 
 const desktopRoutes = [
     {
@@ -39,6 +42,11 @@ const desktopRoutes = [
             {
                 path: '/blogs',
                 element: <PCBlogs />,
+            },
+            // blogs detail
+            {
+                path: '/blogs/:id',
+                element: <ArticleDetail />,
             },
             // about us
             {

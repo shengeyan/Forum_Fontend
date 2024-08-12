@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ArticleDetail from '@/common/articleShow/Index'
+import ArticleDetail from '@/common/articleDetail/ArticleDetail'
 import { ArticleItemProps } from '@/types/commonType/articleType'
 import { getSpecialArticle } from '@/api/article'
 import styles from './index.module.scss'
@@ -21,12 +21,7 @@ const AboutUS: React.FC = () => {
         const InitData = async () => {
             try {
                 const resData = await getSpecialArticle('aboutUS')
-                console.log(resData)
-                if (resData.success) {
-                    setArticle(resData.data)
-                } else {
-                    console.error('Failed to fetch the article')
-                }
+                setArticle(resData)
             } catch (error) {
                 console.error('Error fetching the article:', error)
             }

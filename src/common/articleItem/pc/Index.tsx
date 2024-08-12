@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 import styles from './index.module.scss'
 import { ArticleItemProps } from '@/types/commonType/articleType'
@@ -38,7 +39,9 @@ const Index: React.FC<ArticleItemProps> = ({
                 {/* title */}
                 <div className={styles.title}>{title}</div>
                 {/* content */}
-                <div className={styles.contentText}>{stripHtml(content)}</div>
+                <div className={styles.contentText}>
+                    {stripHtml(content || '')}
+                </div>
                 {/* footer */}
                 <div className={styles.footer}>
                     <div className={styles.tags}>

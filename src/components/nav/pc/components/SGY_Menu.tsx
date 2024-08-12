@@ -1,11 +1,9 @@
-import React from 'react'
 import { Menu } from '@arco-design/web-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function SGY_Menu() {
     const navigate = useNavigate()
     const MenuItem = Menu.Item
-    const SubMenu = Menu.SubMenu
 
     const handleRouter = (key: string) => {
         switch (key) {
@@ -24,7 +22,7 @@ export default function SGY_Menu() {
             case '5':
                 navigate('/about')
                 break
-            case '5_1':
+            case '6':
                 navigate('/links')
                 break
             default:
@@ -44,11 +42,10 @@ export default function SGY_Menu() {
                 <MenuItem key="2">知识库</MenuItem>
                 <MenuItem key="3">留言板</MenuItem>
                 <MenuItem key="4">博客文章</MenuItem>
-                <SubMenu key="5" title={<>关于我们</>}>
-                    <MenuItem key="5_1" style={{ textAlign: 'center' }}>
-                        友链
-                    </MenuItem>
-                </SubMenu>
+                <MenuItem key="5">关于我们</MenuItem>
+                <MenuItem key="6" style={{ textAlign: 'center' }}>
+                    友链
+                </MenuItem>
             </Menu>
             <style jsx>{`
                 .menu {

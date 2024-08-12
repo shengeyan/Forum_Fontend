@@ -1,16 +1,19 @@
 import axios, { InternalAxiosRequestConfig, AxiosInstance } from 'axios'
 
-//  Axios 实例
+//  Axios
 const instance: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/', // 设置基本URL
-    timeout: 5000, // 设置超时时间
+    baseURL: 'http://localhost:3001/',
+    // baseURL: 'http://43.153.134.137/',
+    timeout: 5000,
 })
 
 // 请求拦截器
 instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
         if (config.url) {
-            // 给请求的 url 前面加上 '/api/' 前缀
+            /**
+             * API: base + router  eg: '/ap/getData'
+             */
             if (!config.url.startsWith('/api/')) {
                 config.url = `/api${config.url}`
             }
@@ -27,11 +30,9 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
     (response) => {
-        // 对响应数据做一些处理，比如解析响应结果
         return response.data
     },
     (error) => {
-        // 对响应错误做些什么
         return Promise.reject(error)
     }
 )

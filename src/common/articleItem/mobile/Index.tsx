@@ -35,7 +35,7 @@ const ArticleItem: React.FC<ArticleItemProps> = ({
                     <div className={styles.comments}>
                         <IconMessage /> 评论
                     </div>
-                    <span className={styles.tag}>{tag}</span>
+                    {/* <span className={styles.tag}>{tags}</span> */}
                 </div>
             </div>
         </div>

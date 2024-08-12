@@ -27,7 +27,7 @@ const Content: React.FC = () => {
                     'This is a short example of article content. It will be truncated if too long...',
                 imageUrl: 'https://via.placeholder.com/100',
                 likeCount: Math.floor(Math.random() * 100),
-                tag: 'Technology',
+                tags: ['Technology'],
             })
         )
 
@@ -73,7 +73,10 @@ const Content: React.FC = () => {
     return (
         <div className={styles.content}>
             {articles.map((article) => (
-                <div key={article.id} onClick={() => handleClick(article.id)}>
+                <div
+                    key={article.id}
+                    onClick={() => handleClick(article.id ?? 0)}
+                >
                     <ArticleItem {...article} />
                 </div>
             ))}

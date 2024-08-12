@@ -3,7 +3,7 @@ import ArticleItem from '@/common/articleItem/pc/Index'
 import styles from './index.module.scss'
 import { ArticleItemProps } from '@/types/commonType/articleType'
 import { getArticle } from '@/api/article/index'
-import { AxiosResponse } from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Content: React.FC = () => {
     const [articlesData, setArticlesData] = useState<ArticleItemProps[]>([])
@@ -11,13 +11,15 @@ const Content: React.FC = () => {
     const [hasMore, setHasMore] = useState(true)
     const observer = useRef<IntersectionObserver | null>(null)
     const loader = useRef(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
-        const getData = async () => {
+        const Init = async () => {
             try {
-                const resData: AxiosResponse = await getArticle(page)
-                if (resData.data.length > 0) {
-                    setArticlesData((prev) => [...prev, ...resData.data])
+                const resData = await getArticle(page)
+
+                if (Array.isArray(resData) && resData.length > 0) {
+                    setArticlesData((prev) => [...prev, ...resData])
                 } else {
                     setHasMore(false)
                 }
@@ -26,9 +28,10 @@ const Content: React.FC = () => {
             }
         }
 
-        getData()
+        Init()
     }, [page])
 
+    // TODO: 加强理解
     useEffect(() => {
         if (observer.current) observer.current.disconnect()
 
@@ -45,12 +48,27 @@ const Content: React.FC = () => {
         }
     }, [hasMore])
 
+    const handleClick = (id: number) => {
+        const detailInfo = articlesData.find((article) => article.id === id)
+
+        if (detailInfo) {
+            navigate(`/blogs/${id}`, { state: { ...detailInfo } })
+        } else {
+            console.error('Article not found')
+        }
+    }
+
     return (
         <div className={styles.content}>
             {/* Init Data */}
             {articlesData.length > 0 ? (
                 articlesData.map((article, index) => (
-                    <ArticleItem key={`${article.id}-${index}`} {...article} />
+                    <div
+                        key={`${article.id}-${index}`}
+                        onClick={() => handleClick(article.id ?? 0)}
+                    >
+                        <ArticleItem {...article} />
+                    </div>
                 ))
             ) : (
                 <div>No articles available</div>
