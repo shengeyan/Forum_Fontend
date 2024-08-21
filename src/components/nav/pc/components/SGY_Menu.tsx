@@ -17,7 +17,7 @@ export default function SGY_Menu() {
                 navigate('/knowledge')
                 break
             case '3':
-                navigate('/messages')
+                navigate('/comment')
                 break
             case '5':
                 navigate('/about')

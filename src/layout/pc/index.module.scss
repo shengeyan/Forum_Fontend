@@ -12,10 +12,11 @@
 }
 .footer {
     flex: 0 0 auto;
-    height: 5vh;
+    height: 4vh;
 }
 .middle-layout {
     flex: 1;
     display: flex;
     overflow: hidden;
+    width: 100%;
 }

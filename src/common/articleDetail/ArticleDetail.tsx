@@ -8,7 +8,7 @@ import { ArticleItemProps } from '@/types/commonType/articleType'
 const ArticleDetail: React.FC<Partial<ArticleItemProps>> = (props) => {
     const location = useLocation()
 
-    // 合并 props 和 state 中的数据
+    // InfoData
     const data = {
         title: props.title || location.state?.title,
         authorName: props.authorName || location.state?.authorName,
@@ -17,7 +17,7 @@ const ArticleDetail: React.FC<Partial<ArticleItemProps>> = (props) => {
         tags: props.tags || location.state?.tags || [],
     }
 
-    // 判断关键字段是否存在
+    // Judge null or not
     if (!data.title) {
         return <div>No detail information available</div>
     }
@@ -44,13 +44,13 @@ const ArticleDetail: React.FC<Partial<ArticleItemProps>> = (props) => {
                         ))}
                     </div>
                 </div>
+            </div>
 
-                {/* Content */}
-                <div className={`${styles.content} ${styles.markdown}`}>
-                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                        {data.content}
-                    </ReactMarkdown>
-                </div>
+            {/* Content */}
+            <div className={`${styles.content} ${styles.markdown}`}>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                    {data.content}
+                </ReactMarkdown>
             </div>
         </div>
     )

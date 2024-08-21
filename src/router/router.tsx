@@ -32,12 +32,20 @@ const Links = React.lazy(() => import('@/views/PC/Link/Link'))
 const ArticleDetail = React.lazy(
     () => import('@/common/articleDetail/ArticleDetail')
 )
+const CommentSection = React.lazy(
+    () => import('@/views/PC/CommentSection/CommentSection')
+)
 
 const desktopRoutes = [
     {
         path: '/',
         element: <PCLayout></PCLayout>,
         children: [
+            // CommentSection
+            {
+                path: '/comment',
+                element: <CommentSection />,
+            },
             // blogs
             {
                 path: '/blogs',
