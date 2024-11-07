@@ -141,7 +141,7 @@ const CommentSection: React.FC = () => {
                     <TextArea
                         placeholder="Enter something"
                         defaultValue="评论区比正文还精彩，快来加点料吧！"
-                        autoSize={{ minRows: 6, maxRows: 6 }}
+                        autoSize={{ minRows: 5, maxRows: 5 }}
                     />
                 </div>
 

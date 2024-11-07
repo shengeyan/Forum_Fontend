@@ -10,14 +10,14 @@ export default function SGY_Menu() {
             case '1':
                 navigate('/')
                 break
-            case '4':
-                navigate('/blogs')
-                break
-            case '2':
-                navigate('/knowledge')
-                break
+            // case '2':
+            //     navigate('/knowledge')
+            //     break
             case '3':
                 navigate('/comment')
+                break
+            case '4':
+                navigate('/blogs')
                 break
             case '5':
                 navigate('/about')
@@ -39,7 +39,7 @@ export default function SGY_Menu() {
                 onClickMenuItem={handleRouter}
             >
                 <MenuItem key="1">首页</MenuItem>
-                <MenuItem key="2">知识库</MenuItem>
+                {/* <MenuItem key="2">知识库</MenuItem> */}
                 <MenuItem key="3">留言板</MenuItem>
                 <MenuItem key="4">博客文章</MenuItem>
                 <MenuItem key="5">关于我们</MenuItem>

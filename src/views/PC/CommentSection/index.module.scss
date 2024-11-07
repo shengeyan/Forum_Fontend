@@ -46,19 +46,18 @@
         height: 23.5%;
         width: calc(100% - 2rem);
         background-color: $background-color-withe;
-
         border: 2px solid transparent;
         border-radius: 0.25rem;
-
         position: absolute;
         bottom: 1%;
-
         display: flex;
         position: sticky;
         flex: 1 1 22.5%;
         position: absolute;
         flex-direction: column;
+
         .textArea {
+            flex: 0 0 auto;
             width: 100%;
             height: auto;
             padding: 5px 10px;
@@ -68,6 +67,8 @@
             }
         }
         .buttonArea {
+            flex: 1; /* 占据剩余空间 */
+            display: flex;
             align-self: flex-end;
             Button {
                 margin: 5px 10px;
