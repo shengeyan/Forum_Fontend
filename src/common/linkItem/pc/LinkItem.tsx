@@ -15,6 +15,10 @@ const LiknItem: React.FC<linkType> = (props) => {
         PersonalSignature = DefaultInfo.PersonalSignature,
     } = props
 
+    const onJumpUrl = (url: string) => {
+        window.location.href = url
+    }
+
     return (
         <div className={styles.container}>
             {/* Info */}
@@ -30,21 +34,30 @@ const LiknItem: React.FC<linkType> = (props) => {
                     <div className={styles.links}>
                         {/* BLOG */}
                         {BLOG && (
-                            <div className={styles.link}>
+                            <div
+                                className={`${styles.link} ${styles.blog}`}
+                                onClick={() => onJumpUrl(BLOG)}
+                            >
                                 <IconCommon></IconCommon>
                                 WEB
                             </div>
                         )}
                         {/* VLOG */}
                         {VLOG && (
-                            <div className={styles.link}>
+                            <div
+                                className={`${styles.link} ${styles.vlog}`}
+                                onClick={() => onJumpUrl(VLOG)}
+                            >
                                 <IconCloud></IconCloud>
                                 VLOG
                             </div>
                         )}
                         {/* Github */}
                         {Github && (
-                            <div className={styles.link}>
+                            <div
+                                className={`${styles.link} ${styles.github}`}
+                                onClick={() => onJumpUrl(Github)}
+                            >
                                 <IconLink></IconLink>
                                 Github
                             </div>

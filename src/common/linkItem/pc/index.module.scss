@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-direction: column;
@@ -6,6 +5,9 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
+    &:hover {
+        background-color: $background-color;
+    }
 }
 
 .topSection {
@@ -32,12 +34,28 @@
 .links {
     display: flex;
     align-items: center;
-}
+    margin-top: 5px;
 
-.link {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
+    .link {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        background-color: $background-color;
+        padding: 0 4px;
+        border-radius: 4px;
+        &:hover {
+            cursor: pointer;
+        }
+        &.blog {
+            background-color: $background-color-link-blog;
+        }
+        &.vlog {
+            background-color: $background-color-link-vlog;
+        }
+        &.github {
+            background-color: $background-color-link-github;
+        }
+    }
 }
 
 .linkIcon {
