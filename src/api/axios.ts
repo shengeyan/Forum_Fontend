@@ -2,19 +2,17 @@ import axios, { InternalAxiosRequestConfig, AxiosInstance } from 'axios'
 
 //  Axios
 const instance: AxiosInstance = axios.create({
-    baseURL: 'http://forum.tuanwo.cn:3002/',
-    // baseURL: 'http://localhost:3002/',
-    // baseURL: 'http://localhost:3001/',
-    // baseURL: 'http://43.153.134.137/',
+    baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 5000,
 })
+console.log('e', import.meta.env.VITE_BASE_URL)
 
 // 请求拦截器
 instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
         if (config.url) {
             /**
-             * API: base + router  eg: '/ap/getData'
+             * API: base + router  eg: '/api/getData'
              */
             if (!config.url.startsWith('/api/')) {
                 config.url = `/api${config.url}`
