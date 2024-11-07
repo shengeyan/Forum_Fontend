@@ -4,6 +4,7 @@ import { isMobile } from '@/utils/isMobile'
 import MobileLayout from '@/layout/mobile/index'
 import PCLayout from '@/layout/pc/index'
 import React from 'react'
+import Home from '@/views/PC/Home/Home'
 import Test from '@/views/PC/test'
 
 const isMobileDevice = isMobile()
@@ -37,33 +38,38 @@ const CommentSection = React.lazy(
 )
 
 const desktopRoutes = [
+    // Home
     {
         path: '/',
+        element: <Home />,
+    },
+    {
+        path: '/app',
         element: <PCLayout></PCLayout>,
         children: [
             // CommentSection
             {
-                path: '/comment',
+                path: 'comment',
                 element: <CommentSection />,
             },
             // blogs
             {
-                path: '/blogs',
+                path: 'blogs',
                 element: <PCBlogs />,
             },
             // blogs detail
             {
-                path: '/blogs/:id',
+                path: 'blogs/:id',
                 element: <ArticleDetail />,
             },
             // about us
             {
-                path: '/about',
+                path: 'about',
                 element: <AboutUs />,
             },
             // links
             {
-                path: '/links',
+                path: 'links',
                 element: <Links />,
             },
         ],

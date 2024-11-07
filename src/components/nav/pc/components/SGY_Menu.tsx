@@ -14,16 +14,16 @@ export default function SGY_Menu() {
             //     navigate('/knowledge')
             //     break
             case '3':
-                navigate('/comment')
+                navigate('/app/comment')
                 break
             case '4':
-                navigate('/blogs')
+                navigate('/app/blogs')
                 break
             case '5':
-                navigate('/about')
+                navigate('/app/about')
                 break
             case '6':
-                navigate('/links')
+                navigate('/app/links')
                 break
             default:
                 break
@@ -34,13 +34,12 @@ export default function SGY_Menu() {
         <>
             <Menu
                 mode="horizontal"
-                defaultSelectedKeys={['1']}
                 className="menu"
                 onClickMenuItem={handleRouter}
             >
                 <MenuItem key="1">首页</MenuItem>
                 {/* <MenuItem key="2">知识库</MenuItem> */}
-                <MenuItem key="3">留言板</MenuItem>
+                {/* <MenuItem key="3">留言板</MenuItem> */}
                 <MenuItem key="4">博客文章</MenuItem>
                 <MenuItem key="5">关于我们</MenuItem>
                 <MenuItem key="6" style={{ textAlign: 'center' }}>

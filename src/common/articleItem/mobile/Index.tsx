@@ -10,7 +10,7 @@ const ArticleItem: React.FC<ArticleItemProps> = ({
     content,
     imageUrl,
     likeCount,
-    tag,
+    // tag,
 }) => {
     return (
         <div className={styles.articleItem}>

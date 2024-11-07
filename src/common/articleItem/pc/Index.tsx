@@ -6,7 +6,7 @@ import { ArticleItemProps } from '@/types/commonType/articleType'
 const Index: React.FC<ArticleItemProps> = ({
     title,
     authorName,
-    authorAvatar,
+    // authorAvatar,
     content,
     imageUrl,
     likeCount,

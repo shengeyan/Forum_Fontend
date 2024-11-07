@@ -2,7 +2,9 @@ import axios, { InternalAxiosRequestConfig, AxiosInstance } from 'axios'
 
 //  Axios
 const instance: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/',
+    baseURL: 'http://forum.tuanwo.cn:3002/',
+    // baseURL: 'http://localhost:3002/',
+    // baseURL: 'http://localhost:3001/',
     // baseURL: 'http://43.153.134.137/',
     timeout: 5000,
 })

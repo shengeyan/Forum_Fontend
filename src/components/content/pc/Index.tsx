@@ -52,7 +52,7 @@ const Content: React.FC = () => {
         const detailInfo = articlesData.find((article) => article.id === id)
 
         if (detailInfo) {
-            navigate(`/blogs/${id}`, { state: { ...detailInfo } })
+            navigate(`/app/blogs/${id}`, { state: { ...detailInfo } })
         } else {
             console.error('Article not found')
         }

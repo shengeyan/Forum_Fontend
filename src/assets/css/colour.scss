@@ -1,9 +1,14 @@
 // background color
 $background-color: #f9f9f9;
 $background-color-withe: #fff;
+$background-color-black: black;
 $background-color-link-blog: #ffffcc;
 $background-color-link-vlog: #ccffff;
 $background-color-link-github: #ffcccc;
+$background-color-home-square: #141414;
 
 // hover color
 $background-color-hover: #e5e6eb;
+
+// gradual color
+$gray-gradient: linear-gradient(to right, rgba(20, 20, 20, 0), #141414);
