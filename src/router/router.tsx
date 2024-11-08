@@ -5,7 +5,9 @@ import MobileLayout from '@/layout/mobile/index'
 import PCLayout from '@/layout/pc/index'
 import React from 'react'
 import Home from '@/views/PC/Home/Home'
+import Login from '@/views/PC/Login/Login'
 import Test from '@/views/PC/test'
+import path from 'path'
 
 const isMobileDevice = isMobile()
 const MobileLazyHome = React.lazy(
@@ -73,6 +75,10 @@ const desktopRoutes = [
                 element: <Links />,
             },
         ],
+    },
+    {
+        path: '/login',
+        element: <Login />,
     },
     // tst
     {

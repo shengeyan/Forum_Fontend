@@ -1,0 +1,105 @@
+.container {
+    background-image: url('/public/login/login-container-bc.jfif');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content {
+        background-color: $background-color-login-content;
+        width: 96%;
+        height: 94%;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 20px 20px;
+        .contentTop {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .contentBottom {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .contentBottomImage {
+                width: 60%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 60%;
+                    height: 80%;
+                }
+            }
+            .contentBottomInfo {
+                width: 40%;
+                height: 100%;
+                .infoTitle {
+                    width: 90%;
+                }
+                .infoInputArea {
+                    background-color: #fff;
+                    box-sizing: border-box;
+                    padding: 20px 20px;
+                    border-radius: 5px;
+                    width: 80%;
+
+                    .infoInputItem {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        &:last-child {
+                            margin-top: 10px;
+                        }
+
+                        .iconWrapper {
+                            font-size: 20px;
+                        }
+                        .inputContentArea {
+                            display: flex;
+                            flex: 1;
+                            justify-content: center;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+                    }
+                }
+                .buttonArea {
+                    margin-top: 20px;
+                    width: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+                }
+                .contactArea {
+                    margin-top: 10px;
+                    .contactIcon {
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                        .contactAreaItem {
+                            border-radius: 50%;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
